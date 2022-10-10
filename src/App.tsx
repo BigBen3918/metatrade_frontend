@@ -1,26 +1,41 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { lazy } from "react";
+import {
+    BrowserRouter as Router,
+    Routes,
+    Route,
+    Navigate,
+    useLocation,
+} from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+/** Begin CSS Style */
+import "react-toastify/dist/ReactToastify.css";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import "./assets/styles/index.scss";
+/** End CSS Style */
+
+// Lazy Pages
+const Home = lazy(() => import("./views/auth"));
+const Login = lazy(() => import("./views/auth/login"));
+const Registry = lazy(() => import("./views/auth/registry"));
+
+export default function App() {
+    return (
+        <Router>
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/registry" element={<Registry />} />
+            </Routes>
+            <ToastContainer />
+        </Router>
+    );
 }
 
-export default App;
+// Private Route
+const PrivateRoute: React.FC<Props> = ({ component: RouteComponent }) => {
+    // const location = useLocation();
+    // return <Navigate to="/login" replace state={{ from: location }} />;
+
+    return <RouteComponent />;
+};
