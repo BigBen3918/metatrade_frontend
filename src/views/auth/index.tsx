@@ -1,3 +1,4 @@
+import { FaCheck, FaArrowRight } from "react-icons/fa";
 import { Carousel } from "react-responsive-carousel";
 import Layout from "./components";
 import slide1 from "../../assets/images/slider1.jpg";
@@ -72,8 +73,9 @@ export default function Home() {
                                 />
                                 <h4>Trusted Company</h4>
                                 <p>
-                                    Trusted by thousand of people all over the
-                                    world. Good reviews on all social channels
+                                    <FaCheck /> Trusted by thousand of people
+                                    all over the world. Good reviews on all
+                                    social channels
                                 </p>
                             </div>
                         </div>
@@ -85,9 +87,9 @@ export default function Home() {
                                 />
                                 <h4>Secured</h4>
                                 <p>
-                                    Secured blockchain transactions, Secured
-                                    investors data and personal information. Top
-                                    level ssl certification.
+                                    <FaCheck /> Secured blockchain transactions,
+                                    Secured investors data and personal
+                                    information. Top level ssl certification.
                                 </p>
                             </div>
                         </div>
@@ -99,10 +101,43 @@ export default function Home() {
                                 />
                                 <h4>Privacy</h4>
                                 <p>
-                                    All private information remains private.
-                                    NOTCHCHAIN never shares Private information
-                                    to any third party
+                                    <FaCheck /> All private information remains
+                                    private. NOTCHCHAIN never shares Private
+                                    information to any third party
                                 </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="spacer-50"></div>
+                <div className="about">
+                    <div className="container">
+                        <h2 className="m0">About Us</h2>
+                        <div className="row w100">
+                            <div className="col-sm-12 col-md-6 p2">
+                                <div className="about_item">
+                                    <p>
+                                        NOTCHCHAIN is a group of investors,
+                                        traders, analyst and brokers, with
+                                        valuable experience in the sphere of
+                                        forex and NOTCHCHAIN dedicated their
+                                        time to research development. Anyone all
+                                        over the world can become an investor.
+                                        We provide investment vehicles to
+                                        investors of all sizes interested in
+                                        being part of the revolutionary
+                                        forex,binary option, crypto-currency and
+                                        bitcoin mining world.
+                                    </p>
+                                    <div>
+                                        <button>
+                                            Read More <FaArrowRight />
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="col-sm-12 col-md-6 p2">
+                                <div className="about_video"></div>
                             </div>
                         </div>
                     </div>

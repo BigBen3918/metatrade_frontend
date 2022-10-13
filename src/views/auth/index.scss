@@ -60,6 +60,60 @@
             > img {
                 width: 50%;
             }
+
+            @media screen and (max-width: 1280px) {
+                min-height: 400px;
+            }
+
+            @media screen and (max-width: 992px) {
+                min-height: 450px;
+            }
+
+            @media screen and (max-width: 768px) {
+                min-height: unset;
+            }
+        }
+    }
+
+    .about {
+        background-color: rgb(184, 184, 184);
+
+        > div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            h2 {
+                text-align: center;
+                padding-top: 30px;
+            }
+
+            .about_item {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                button {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 5px;
+                    padding: 15px 25px;
+                    outline: 0;
+                    border: 2px solid var(--secondary);
+                    background-color: transparent;
+                    transition: 0.4s all;
+                    font-weight: 600;
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: var(--primary);
+                        border: 2px solid var(--secondary);
+                        color: rgb(228, 194, 0);
+                    }
+                }
+            }
         }
     }
 }
