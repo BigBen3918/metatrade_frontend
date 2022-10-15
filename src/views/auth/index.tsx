@@ -1,14 +1,16 @@
 import { FaCheck, FaArrowRight, FaUser } from "react-icons/fa";
 import { Carousel } from "react-responsive-carousel";
+import MultiCarousel from "../../components/multicarousel";
 import Layout from "./components";
 import slide1 from "../../assets/images/slider1.jpg";
 import slide2 from "../../assets/images/slider2.jpg";
 import slide3 from "../../assets/images/slider3.jpg";
-import { card_mock } from "./mock";
+import { card_mock, testi_mock } from "./mock";
 import pay1 from "../../assets/images/ethereum.png";
 import pay2 from "../../assets/images/bitcoin.png";
 import pay3 from "../../assets/images/litecoin.png";
 import pay4 from "../../assets/images/perfect-money.png";
+import introduce from "../../assets/video/video.mp4";
 
 import "./index.scss";
 
@@ -209,22 +211,32 @@ export default function Home() {
                             testimonies
                         </i>
                     </p>
+                    <div className="spacer-30"></div>
                     <div className="test_slide">
-                        <Carousel
-                            autoPlay
-                            emulateTouch
-                            infiniteLoop
-                            showArrows={false}
-                            showStatus={false}
-                            showThumbs={false}
-                            showIndicators={false}
-                        >
-                            <div className="slide_card"></div>
-                            <div className="slide_card"></div>
-                            <div className="slide_card"></div>
-                            <div className="slide_card"></div>
-                        </Carousel>
+                        <MultiCarousel>
+                            {testi_mock.map(
+                                (item: TestiObject, index: number) => (
+                                    <Testi
+                                        key={index}
+                                        image={item.image}
+                                        name={item.name}
+                                        content={item.content}
+                                    />
+                                )
+                            )}
+                        </MultiCarousel>
                     </div>
+                    <div className="spacer-50"></div>
+                    <h3>TESTIMONIES(VIDEOS)</h3>
+                    <div className="test_video">
+                        <video
+                            src={introduce}
+                            autoPlay
+                            controls
+                            datatype="video/mp4"
+                        />
+                    </div>
+                    <div className="spacer-50"></div>
                 </div>
             </div>
         </Layout>
@@ -257,6 +269,18 @@ const Card = (props: CardObject) => {
                     <FaUser />
                 </button>
             </div>
+        </div>
+    );
+};
+
+const Testi = (props: TestiObject) => {
+    const { image, name, content } = props;
+
+    return (
+        <div className="slide_card">
+            <img src={image} alt="" />
+            <p>{content}</p>
+            <h5>{name}</h5>
         </div>
     );
 };

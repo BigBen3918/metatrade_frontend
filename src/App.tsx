@@ -11,6 +11,7 @@ import { ToastContainer } from "react-toastify";
 /** Begin CSS Style */
 import "react-toastify/dist/ReactToastify.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import "react-multi-carousel/lib/styles.css";
 import "./assets/styles/index.scss";
 /** End CSS Style */
 

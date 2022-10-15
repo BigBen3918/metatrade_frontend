@@ -245,14 +245,68 @@
         background-attachment: fixed;
         text-align: center;
 
+        li {
+            padding: 20px;
+        }
+
         h3 {
             color: var(--font-white-color);
             padding: 20px;
         }
-
+        
         > p {
             margin: 0;
             color: var(--font-white-color);
+        }
+
+        .test_slide {
+            .slide_card {
+                background-image: url("../.././assets/images/test-bg.jpg") !important;
+                background-size: cover !important;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+                padding: 30px;
+                background: white;
+                user-select: none;
+                border-radius: 20px;
+                height: 450px;
+
+                img {
+                    border-radius: 50%;
+                    width: 100px;
+                    height: 100px;
+                    object-fit: cover;
+                    border: 1px solid rgb(192, 192, 192);
+                    padding: 2px;
+                }
+
+                @media screen and (max-width: 350px) {
+                    height: 600px;
+                }
+            }
+        }
+
+        .test_video {
+            background-image: url("../../assets/images/test-bg.jpg");
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 500px;
+            height: 400px;
+            margin: 0 auto 0;
+            border-radius: 20px;
+
+            video {
+                height: 100%;
+            }
+
+            @media screen and (max-width: 768px) {
+                width: 100%;
+                height: 50vw;
+            }
         }
     }
 }

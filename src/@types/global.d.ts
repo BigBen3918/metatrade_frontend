@@ -30,3 +30,9 @@ declare interface CardObject {
     cost: number;
     bonus: number;
 }
+
+declare interface TestiObject {
+    image: string;
+    name: string;
+    content: string;
+}
