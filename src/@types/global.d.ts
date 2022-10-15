@@ -1,3 +1,5 @@
+declare module "*.mp4";
+
 declare interface Props {
     component: React.ComponentType;
     path?: string;
@@ -20,4 +22,11 @@ declare interface RegistryObject {
 declare interface LoginObject {
     email: string;
     password: string;
+}
+
+// Card Interface
+declare interface CardObject {
+    title: string;
+    cost: number;
+    bonus: number;
 }

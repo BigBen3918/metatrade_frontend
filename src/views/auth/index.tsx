@@ -1,9 +1,14 @@
-import { FaCheck, FaArrowRight } from "react-icons/fa";
+import { FaCheck, FaArrowRight, FaUser } from "react-icons/fa";
 import { Carousel } from "react-responsive-carousel";
 import Layout from "./components";
 import slide1 from "../../assets/images/slider1.jpg";
 import slide2 from "../../assets/images/slider2.jpg";
 import slide3 from "../../assets/images/slider3.jpg";
+import { card_mock } from "./mock";
+import pay1 from "../../assets/images/ethereum.png";
+import pay2 from "../../assets/images/bitcoin.png";
+import pay3 from "../../assets/images/litecoin.png";
+import pay4 from "../../assets/images/perfect-money.png";
 
 import "./index.scss";
 
@@ -53,6 +58,7 @@ export default function Home() {
                     </Carousel>
                 </div>
                 <div className="spacer-50"></div>
+
                 <div className="container trading">
                     <h2 className="m0">Our Trading Services</h2>
                     <p>
@@ -110,8 +116,10 @@ export default function Home() {
                     </div>
                 </div>
                 <div className="spacer-50"></div>
+
                 <div className="about">
                     <div className="container">
+                        <div className="spacer-20"></div>
                         <h2 className="m0">About Us</h2>
                         <div className="row w100">
                             <div className="col-sm-12 col-md-6 p2">
@@ -129,6 +137,7 @@ export default function Home() {
                                         forex,binary option, crypto-currency and
                                         bitcoin mining world.
                                     </p>
+                                    <div className="spacer-10"></div>
                                     <div>
                                         <button>
                                             Read More <FaArrowRight />
@@ -137,12 +146,117 @@ export default function Home() {
                                 </div>
                             </div>
                             <div className="col-sm-12 col-md-6 p2">
-                                <div className="about_video"></div>
+                                <div className="about_video">
+                                    <img
+                                        src={require("../../assets/images/desktop.png")}
+                                        alt=""
+                                    />
+                                </div>
                             </div>
                         </div>
+                        <div className="spacer-30"></div>
+                    </div>
+                </div>
+
+                <div className="size">
+                    <div className="spacer-20"></div>
+                    <div className="row w100">
+                        {card_mock.map((item: CardObject, index: number) => (
+                            <div
+                                className="col-sm-12 col-md-6 col-lg-3 p2"
+                                key={index}
+                            >
+                                <Card
+                                    title={item.title}
+                                    cost={item.cost}
+                                    bonus={item.bonus}
+                                />
+                            </div>
+                        ))}
+                    </div>
+                    <div className="spacer-30"></div>
+                </div>
+
+                <div className="payment">
+                    <div className="container">
+                        <div className="spacer-50"></div>
+                        <h3>Payment Method</h3>
+                        <p>Payment methods for Deposit and Withdrawal</p>
+                        <div className="spacer-20"></div>
+                        <div className="row m0">
+                            <div className="col-6 col-md-3 p1">
+                                <img src={pay1} alt="" />
+                            </div>
+                            <div className="col-6 col-md-3 p1">
+                                <img src={pay2} alt="" />
+                            </div>
+                            <div className="col-6 col-md-3 p1">
+                                <img src={pay3} alt="" />
+                            </div>
+                            <div className="col-6 col-md-3 p1">
+                                <img src={pay4} alt="" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="testimonies">
+                    <h3>TESTIMONIES</h3>
+                    <p>
+                        <i>
+                            Happy investors{" "}
+                            <b style={{ color: "gold" }}>sharing</b> their
+                            testimonies
+                        </i>
+                    </p>
+                    <div className="test_slide">
+                        <Carousel
+                            autoPlay
+                            emulateTouch
+                            infiniteLoop
+                            showArrows={false}
+                            showStatus={false}
+                            showThumbs={false}
+                            showIndicators={false}
+                        >
+                            <div className="slide_card"></div>
+                            <div className="slide_card"></div>
+                            <div className="slide_card"></div>
+                            <div className="slide_card"></div>
+                        </Carousel>
                     </div>
                 </div>
             </div>
         </Layout>
     );
 }
+
+const Card = (props: CardObject) => {
+    const { title, cost, bonus } = props;
+
+    return (
+        <div className="card">
+            <div>
+                <h3>{title}</h3>
+            </div>
+            <div>
+                <span className="spacer-10"></span>
+                <p>${cost}</p>
+                <p>
+                    <b>TRADING</b>
+                </p>
+                <p>
+                    <span style={{ color: "var(--secondary)" }}>BOUNS</span>{" "}
+                    {bonus}%
+                </p>
+                <span className="spacer-10"></span>
+            </div>
+            <div>
+                <button>
+                    <b>Sign Up</b>
+                    <FaUser />
+                </button>
+            </div>
+        </div>
+    );
+};

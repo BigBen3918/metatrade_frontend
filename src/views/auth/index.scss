@@ -113,7 +113,146 @@
                         color: rgb(228, 194, 0);
                     }
                 }
+
+                @media screen and (max-width: 768px) {
+                    > p {
+                        text-align: center;
+                    }
+                }
             }
+
+            .about_video {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 20px;
+                width: 100%;
+                height: 100%;
+
+                img {
+                    width: 80%;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+
+    .size {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        gap: 10px;
+        background-image: url("../../assets/images/benefits.jpg");
+        background-size: cover;
+        background-position-y: 30%;
+        background-attachment: fixed;
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--dark);
+            border-radius: 20px;
+
+            div:nth-child(1) {
+                background-color: #6fbf52;
+                width: 100%;
+                text-align: center;
+                padding: 20px;
+                border-radius: 20px;
+                border-bottom-right-radius: 100px;
+                border-bottom-left-radius: 0;
+
+                h3 {
+                    color: var(--font-white-color);
+                }
+            }
+
+            div:nth-child(2) {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                color: #ddd;
+                text-align: center;
+                gap: 10px;
+                width: 100%;
+
+                > P {
+                    width: 60%;
+                    border-bottom: 1px solid white;
+                    margin: 0;
+                }
+            }
+
+            div:nth-child(3) {
+                padding: 25px;
+                button {
+                    background-color: transparent;
+                    border: 1px solid #6fbf52;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 5px;
+                    outline: none;
+                    padding: 15px 35px;
+                    color: #6fbf52;
+                    border-radius: 25px;
+                    cursor: pointer;
+                    transition: 0.3s ease-in-out;
+
+                    &:hover {
+                        color: gold;
+                        border-color: gold;
+                    }
+                }
+            }
+        }
+    }
+
+    .payment {
+        background-image: url("../../assets/images/j1.jpg");
+        background-size: cover;
+        background-attachment: fixed;
+
+        > div {
+            text-align: center;
+
+            h3 {
+                color: white;
+                padding: 20px;
+            }
+
+            > p {
+                margin: 0;
+                color: #aaa;
+            }
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    .testimonies {
+        background-image: linear-gradient(#00000050, #00000050),
+            linear-gradient(#00000050, #00000050),
+            url("../../assets/images/testimony.jpg");
+        background-size: cover;
+        background-attachment: fixed;
+        text-align: center;
+
+        h3 {
+            color: var(--font-white-color);
+            padding: 20px;
+        }
+
+        > p {
+            margin: 0;
+            color: var(--font-white-color);
         }
     }
 }
