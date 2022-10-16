@@ -30,6 +30,7 @@ export default function App() {
                     <Route path="/" element={<Home />} />
                     <Route path="/login" element={<Login />} />
                     <Route path="/registry" element={<Registry />} />
+                    <Route path="*" element={<Navigate to="/" />} />
                 </Routes>
             </Suspense>
             <ToastContainer />
