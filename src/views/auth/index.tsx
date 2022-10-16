@@ -1,7 +1,7 @@
 import { FaCheck, FaArrowRight, FaUser } from "react-icons/fa";
 import { Carousel } from "react-responsive-carousel";
 import MultiCarousel from "../../components/multicarousel";
-import Layout from "./components";
+import Layout from "../../components/auth";
 import slide1 from "../../assets/images/slider1.jpg";
 import slide2 from "../../assets/images/slider2.jpg";
 import slide3 from "../../assets/images/slider3.jpg";
@@ -11,8 +11,6 @@ import pay2 from "../../assets/images/bitcoin.png";
 import pay3 from "../../assets/images/litecoin.png";
 import pay4 from "../../assets/images/perfect-money.png";
 import introduce from "../../assets/video/video.mp4";
-
-import "./index.scss";
 
 export default function Home() {
     return (
@@ -229,12 +227,7 @@ export default function Home() {
                     <div className="spacer-50"></div>
                     <h3>TESTIMONIES(VIDEOS)</h3>
                     <div className="test_video">
-                        <video
-                            src={introduce}
-                            autoPlay
-                            controls
-                            datatype="video/mp4"
-                        />
+                        <video controls src={introduce} datatype="video/mp4" />
                     </div>
                     <div className="spacer-50"></div>
                 </div>
