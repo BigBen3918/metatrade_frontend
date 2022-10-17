@@ -10,7 +10,7 @@ export default function AuthFooter() {
                     <img src={footerLogo} alt="" />
                     <p>
                         Are you looking for a stable, reliable, guaranteed
-                        weekly income? NOTCHCHAIN offers a range of options to
+                        weekly income? METATRADE offers a range of options to
                         make the most off your investment. Get involved to
                         discover the power of trading.
                     </p>

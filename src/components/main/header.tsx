@@ -27,7 +27,7 @@ export default function Header(props: any) {
             <div>
                 <p>
                     Welcome,{" "}
-                    <b style={{ color: "var(--secondary)" }}>{auth.name}</b>
+                    <b style={{ color: "var(--secondary)" }}>{auth.username}</b>
                 </p>
                 <p>
                     balance <b>{0}$</b>

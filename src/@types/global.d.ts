@@ -12,7 +12,8 @@ declare interface Layout {
 /** ----- Auth Interfaces ----- */
 interface AuthState {
     isAuth: boolean;
-    name: string;
+    username: string;
+    fullname: string;
     email: string;
     gender: number;
     option: number;

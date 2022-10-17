@@ -3,7 +3,8 @@ import decode from "jwt-decode";
 
 const initialState: AuthState = {
     isAuth: false,
-    name: "",
+    fullname: "",
+    username: "",
     email: "",
     gender: 1,
     option: 1,
@@ -18,7 +19,8 @@ export const authSlice = createSlice({
             const data: any = decode(action.payload);
             state.isAuth = true;
             state.email = data.email;
-            state.name = data.username;
+            state.username = data.username;
+            state.fullname = data.fullname;
             state.gender = data.gender;
             state.option = data.option;
 
@@ -26,8 +28,9 @@ export const authSlice = createSlice({
         },
         resetAuth: (state) => {
             state.isAuth = false;
-            state.name = "";
+            state.username = "";
             state.email = "";
+            state.fullname = "";
             state.gender = 1;
             state.option = 1;
             localStorage.removeItem("metatrade_session");
