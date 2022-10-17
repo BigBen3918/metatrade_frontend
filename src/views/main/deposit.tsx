@@ -7,7 +7,7 @@ export default function Deposit() {
 
     const copyAddress = () => {
         copyToClipboard(String(process.env.REACT_APP_COMADDRESS))
-            .then((res: any) => {
+            .then(() => {
                 setCopy(true);
                 setTimeout(() => {
                     setCopy(false);
