@@ -1,12 +1,45 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import Layout from "../../components/auth";
+import Action from "../../service";
+import { updateAuth } from "../../store/reducer/auth";
+import { Toast } from "../../utils";
 
 export default function Login() {
+    const dispatch = useDispatch();
     const [username, setUsername] = React.useState("");
     const [password, setPassword] = React.useState("");
 
-    const submit = () => {};
+    const submit = async () => {
+        if (username.trim() === "") {
+            Toast("Please enter username", "warn");
+            return;
+        }
+        if (password.trim() === "") {
+            Toast("Please enter password", "warn");
+            return;
+        }
+        try {
+            const result = await Action.Admin_login({
+                name: username,
+                password: password,
+            });
+
+            dispatch(updateAuth(result.token));
+        } catch (err: any) {
+            switch (err.response.status) {
+                case 400:
+                case 404:
+                case 500:
+                    Toast(err.response.data, "error");
+                    break;
+                default:
+                    Toast("Network Error", "error");
+                    break;
+            }
+        }
+    };
 
     return (
         <Layout>

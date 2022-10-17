@@ -1,3 +1,4 @@
+import React from "react";
 import { FaCheck, FaArrowRight, FaUser } from "react-icons/fa";
 import { Carousel } from "react-responsive-carousel";
 import MultiCarousel from "../../components/multicarousel";

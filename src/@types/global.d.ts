@@ -10,6 +10,13 @@ declare interface Layout {
 }
 
 /** ----- Auth Interfaces ----- */
+interface AuthState {
+    isAuth: boolean;
+    name: string;
+    email: string;
+    gender: number;
+    option: number;
+}
 declare interface RegistryObject {
     fullname: string;
     username: String;
@@ -20,7 +27,7 @@ declare interface RegistryObject {
     option: number;
 }
 declare interface LoginObject {
-    email: string;
+    name: string;
     password: string;
 }
 
