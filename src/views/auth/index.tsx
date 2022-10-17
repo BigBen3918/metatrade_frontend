@@ -1,5 +1,6 @@
 import React from "react";
 import { FaCheck, FaArrowRight, FaUser } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 import { Carousel } from "react-responsive-carousel";
 import MultiCarousel from "../../components/multicarousel";
 import Layout from "../../components/auth";
@@ -12,8 +13,12 @@ import pay2 from "../../assets/images/bitcoin.png";
 import pay3 from "../../assets/images/litecoin.png";
 import pay4 from "../../assets/images/perfect-money.png";
 import introduce from "../../assets/video/video.mp4";
+import Modal from "../../components/modal";
 
 export default function Home() {
+    const [open, setOpen] = React.useState(false);
+    const navigate = useNavigate();
+
     return (
         <Layout>
             <div className="home">
@@ -31,19 +36,23 @@ export default function Home() {
                             <img src={slide1} alt="" />
                             <div className="slide_content">
                                 <h2>RELIABLE, SIMPLE AND INNOVATIVE</h2>
-                                <button>Create a Trading Account</button>
+                                <button onClick={() => navigate("/registry")}>
+                                    Create a Trading Account
+                                </button>
                             </div>
                         </div>
                         <div>
                             <img src={slide2} alt="" />
                             <div className="slide_content">
                                 <h2>
-                                    NOTCHCHAIN
+                                    METATRADE
                                     <br />
                                     WE RISE BY RISING OTHERS UNDER THE IQ OPTION
                                     AND FXTM
                                 </h2>
-                                <button>Create a Trading Account</button>
+                                <button onClick={() => navigate("/registry")}>
+                                    Create a Trading Account
+                                </button>
                             </div>
                         </div>
                         <div>
@@ -51,9 +60,11 @@ export default function Home() {
                             <div className="slide_content">
                                 <h2>
                                     JOIN THOUSANDS WHO HAVE ALREDY
-                                    <br /> TRADED WITH NOTCHCHAIN
+                                    <br /> TRADED WITH METATRADE
                                 </h2>
-                                <button>Create a Trading Account</button>
+                                <button onClick={() => navigate("/registry")}>
+                                    Create a Trading Account
+                                </button>
                             </div>
                         </div>
                     </Carousel>
@@ -109,7 +120,7 @@ export default function Home() {
                                 <h4>Privacy</h4>
                                 <p>
                                     <FaCheck /> All private information remains
-                                    private. NOTCHCHAIN never shares Private
+                                    private. METATRADE never shares Private
                                     information to any third party
                                 </p>
                             </div>
@@ -126,21 +137,21 @@ export default function Home() {
                             <div className="col-sm-12 col-md-6 p2">
                                 <div className="about_item">
                                     <p>
-                                        NOTCHCHAIN is a group of investors,
+                                        METATRADE is a group of investors,
                                         traders, analyst and brokers, with
                                         valuable experience in the sphere of
-                                        forex and NOTCHCHAIN dedicated their
-                                        time to research development. Anyone all
-                                        over the world can become an investor.
-                                        We provide investment vehicles to
-                                        investors of all sizes interested in
-                                        being part of the revolutionary
-                                        forex,binary option, crypto-currency and
-                                        bitcoin mining world.
+                                        forex and METATRADE dedicated their time
+                                        to research development. Anyone all over
+                                        the world can become an investor. We
+                                        provide investment vehicles to investors
+                                        of all sizes interested in being part of
+                                        the revolutionary forex,binary option,
+                                        crypto-currency and bitcoin mining
+                                        world.
                                     </p>
                                     <div className="spacer-10"></div>
                                     <div>
-                                        <button>
+                                        <button onClick={() => setOpen(!open)}>
                                             Read More <FaArrowRight />
                                         </button>
                                     </div>
@@ -233,12 +244,15 @@ export default function Home() {
                     <div className="spacer-50"></div>
                 </div>
             </div>
+
+            {open ? <Modal closeModal={() => setOpen(false)} /> : null}
         </Layout>
     );
 }
 
 const Card = (props: CardObject) => {
     const { title, cost, bonus } = props;
+    const navigate = useNavigate();
 
     return (
         <div className="card">
@@ -258,7 +272,7 @@ const Card = (props: CardObject) => {
                 <span className="spacer-10"></span>
             </div>
             <div>
-                <button>
+                <button onClick={() => navigate("/registry")}>
                     <b>Sign Up</b>
                     <FaUser />
                 </button>
