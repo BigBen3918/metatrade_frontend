@@ -1,7 +1,13 @@
+import React from "react";
 import { Link } from "react-router-dom";
 import Layout from "../../components/auth";
 
 export default function Login() {
+    const [username, setUsername] = React.useState("");
+    const [password, setPassword] = React.useState("");
+
+    const submit = () => {};
+
     return (
         <Layout>
             <div className="login">
@@ -12,14 +18,20 @@ export default function Login() {
                             <input
                                 type="text"
                                 placeholder="Username"
-                                required
+                                value={username}
+                                onChange={(e: any) =>
+                                    setUsername(e.target.value)
+                                }
                             />
                             <input
                                 type="password"
                                 placeholder="Password"
-                                required
+                                value={password}
+                                onChange={(e: any) =>
+                                    setPassword(e.target.value)
+                                }
                             />
-                            <button>Login</button>
+                            <button onClick={submit}>Login</button>
                         </div>
                     </div>
                     <div>

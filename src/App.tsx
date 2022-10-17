@@ -6,6 +6,9 @@ import {
     Navigate,
     useLocation,
 } from "react-router-dom";
+import { createStore, applyMiddleware, Store } from "redux";
+import { Provider } from "react-redux";
+import thunk from "redux-thunk";
 import { ToastContainer } from "react-toastify";
 
 /** Begin CSS Style */
