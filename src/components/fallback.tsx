@@ -11,7 +11,7 @@ export default function Fallback() {
                 justifyContent: "center",
             }}
         >
-            <img src={loading} alt="" />
+            <img src={loading} alt="" style={{ width: "150px" }} />
         </div>
     );
 }

@@ -1,0 +1,60 @@
+.main_header {
+    padding: 10px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    border-radius: 5px;
+
+    button {
+        background-color: var(--primary);
+        border: none;
+        outline: none;
+        border-radius: 0.25rem;
+        display: flex;
+        cursor: pointer;
+        font-size: 1rem;
+        line-height: 1.5;
+        font-weight: 400;
+        padding: 10px;
+        color: var(--font-white-color);
+        transition: 0.3s all;
+
+        &:hover {
+            background-color: rgb(255, 81, 0);
+        }
+    }
+
+    > div {
+        p {
+            margin: 0;
+        }
+    }
+}
+
+.main_sidebar {
+    p {
+        margin: 0;
+        padding: 20px 0;
+        font-size: 40px;
+        text-align: center;
+        color: var(--font-white-color);
+        text-shadow: 3px 3px 8px rgb(0, 0, 0);
+    }
+
+    aside {
+        height: 100%;
+
+        > div:nth-child(1) {
+            a {
+                color: white;
+
+                &:hover {
+                    color: var(--primary);
+                }
+            }
+        }
+    }
+}

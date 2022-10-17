@@ -23,7 +23,8 @@ const Home = lazy(() => import("./views/auth"));
 const Login = lazy(() => import("./views/auth/login"));
 const Registry = lazy(() => import("./views/auth/registry"));
 const Dashboard = lazy(() => import("./views/main/dashboard"));
-const Message = lazy(() => import("./utils/meessage"));
+const Deposit = lazy(() => import("./views/main/deposit"));
+const Withdraw = lazy(() => import("./views/main/withdraw"));
 
 export default function App() {
     return (
@@ -47,11 +48,18 @@ export default function App() {
                             path="/dashboard"
                             element={<PrivateRoute component={Dashboard} />}
                         />
+                        <Route
+                            path="/deposit"
+                            element={<PrivateRoute component={Deposit} />}
+                        />
+                        <Route
+                            path="/withdraw"
+                            element={<PrivateRoute component={Withdraw} />}
+                        />
                         <Route path="*" element={<Navigate to="/" />} />
                     </Routes>
                 </Suspense>
                 <ToastContainer />
-                <Message />
             </Router>
         </Provider>
     );

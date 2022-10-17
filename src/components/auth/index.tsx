@@ -2,6 +2,7 @@ import { lazy } from "react";
 
 const Header = lazy(() => import("./header"));
 const Footer = lazy(() => import("./footer"));
+const Message = lazy(() => import("../../utils/meessage"));
 
 const Layout = ({ children }: Layout) => {
     return (
@@ -14,6 +15,7 @@ const Layout = ({ children }: Layout) => {
             <Header />
             {children}
             <Footer />
+            <Message />
         </>
     );
 };
