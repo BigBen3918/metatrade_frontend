@@ -13,9 +13,65 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
 
     h3 {
         padding: 20px;
+    }
+
+    .payment_method {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+
+        > div {
+            padding: 15px 25px;
+            background-color: #4c6ef5;
+            border-radius: 5px;
+            color: var(--font-white-color);
+            cursor: pointer;
+        }
+
+        .active {
+            background-color: var(--primary);
+        }
+
+        @media screen and (max-width: 500px) {
+            gap: 10px;
+
+            > div {
+                padding: 3vw 5vw;
+            }
+        }
+
+        @media screen and (max-width: 350px) {
+            flex-direction: column;
+            width: 100%;
+
+            > div {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    }
+
+    .payment_code {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        width: 100%;
+
+        .qrcode {
+            width: 300px;
+            height: 300px;
+
+            @media screen and (max-width: 500px) {
+                width: 100%;
+                height: auto;
+            }
+        }
     }
 
     span {
@@ -26,10 +82,17 @@
         background-color: #ddd;
         user-select: none;
         cursor: pointer;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
 
         &:hover {
             border: 1px solid #ccc;
             background-color: #eee;
+        }
+
+        @media screen and (max-width: 500px) {
+            width: 100%;
         }
     }
 }
@@ -42,6 +105,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
 
     h3 {
         padding: 20px;
@@ -51,8 +115,13 @@
         outline: none;
         padding: 15px 25px;
         border-radius: 50px;
+        width: 450px;
         border: 1px solid #ccc;
         background-color: #ddd;
+
+        @media screen and (max-width: 800px) {
+            width: 100%;
+        }
     }
 
     button {
